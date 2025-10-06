@@ -11,30 +11,13 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLZFhZgAvUIGp9dysfuEQESWh5B7hohDqpdw&s') no-repeat center center fixed; /* Updated background image */
-            background-size: cover;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%); /* Creative gradient noir subtil */
             color: white;
             font-family: 'Roboto', sans-serif; /* Police pro pour tout */
             overflow-x: hidden; /* Allow vertical scroll for focus */
             position: relative;
             direction: ltr;
             transition: direction 0.5s ease;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
-            z-index: 1;
-        }
-
-        * {
-            position: relative;
-            z-index: 2;
         }
 
         body.rtl {
@@ -634,9 +617,16 @@
                     'visiteur-extern': {
                         contentHtml: `
                             <h2>Visiteur Extern</h2>
-                            <p>Nos protocoles pour les visiteurs externes garantissent la sécurité et le respect des procédures internes de WKW Automotive.</p>
-                            <p>Chaque visite est planifiée avec soin pour assurer une intégration fluide et respectueuse des normes IATF 16949.</p>
-                            <p>Nous formons nos équipes à accompagner les visiteurs de manière professionnelle.</p>
+                            <div class="image-gallery">
+                                <img src="https://blog-signals.fr/wp-content/uploads/2017/11/accueil-des-visiteurs.jpg" alt="Accueil des visiteurs" loading="lazy">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVa8f4kuDMhBiCGoC4n7FCHA1LtIEH-6uDEw&s" alt="Système d'accueil des visiteurs externes" loading="lazy">
+                            </div>
+                            <p>Présentation du système de digitalisation des visites externes avec QR Code</p>
+                            <p>Le système de digitalisation des visites externes repose sur une solution moderne et automatisée basée sur l’utilisation d’un QR Code. Lorsqu’un visiteur externe se présente, il scanne le QR Code mis à disposition à l’entrée. Ce scan l’oriente vers un formulaire numérique qu’il doit remplir avec ses informations personnelles, le motif de sa visite et la personne à rencontrer. Une fois le formulaire soumis, la demande est automatiquement transmise au service des Ressources Humaines (RH) pour validation.</p>
+                            <p>✅ Si les RH approuvent, la demande est ensuite envoyée à la Direction pour confirmation finale.</p>
+                            <p>✅ Si la Direction valide, l’autorisation de visite s’affiche en temps réel sur l’écran TV du poste de sécurité, permettant ainsi aux agents de filtrer l’accès efficacement.</p>
+                            <p>❌ En cas de refus (par les RH ou la Direction), la notification de refus est également envoyée et affichée sur le même écran, informant immédiatement la sécurité.</p>
+                            <p>Ce système permet de gagner du temps, réduire la paperasse, améliorer la traçabilité des visiteurs et renforcer la sécurité grâce à un processus de validation clair et digitalisé.</p>
                             <p class="cta">Planifier une visite externe</p>
                         `
                     },
@@ -778,9 +768,16 @@
                     'visiteur-extern': {
                         contentHtml: `
                             <h2>External Visitor</h2>
-                            <p>Our protocols for external visitors ensure safety and compliance with WKW Automotive's internal procedures.</p>
-                            <p>Each visit is carefully planned to ensure smooth and respectful integration in line with IATF 16949 standards.</p>
-                            <p>We train our teams to professionally accompany visitors.</p>
+                            <div class="image-gallery">
+                                <img src="https://blog-signals.fr/wp-content/uploads/2017/11/accueil-des-visiteurs.jpg" alt="Welcoming visitors" loading="lazy">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVa8f4kuDMhBiCGoC4n7FCHA1LtIEH-6uDEw&s" alt="External visitor welcome system" loading="lazy">
+                            </div>
+                            <p>Presentation of the External Visits Digitalization System with QR Code</p>
+                            <p>The external visits digitalization system is based on a modern and automated solution using a QR Code. When an external visitor arrives, they scan the QR Code provided at the entrance. This scan directs them to a digital form they must fill out with their personal information, the purpose of their visit, and the person they are meeting. Once the form is submitted, the request is automatically sent to the Human Resources (HR) department for validation.</p>
+                            <p>✅ If HR approves, the request is then sent to the Management for final confirmation.</p>
+                            <p>✅ If Management validates, the visit authorization is displayed in real-time on the TV screen at the security post, allowing agents to effectively filter access.</p>
+                            <p>❌ In case of refusal (by HR or Management), the refusal notification is also sent and displayed on the same screen, immediately informing security.</p>
+                            <p>This system saves time, reduces paperwork, improves visitor traceability, and strengthens security through a clear and digitized validation process.</p>
                             <p class="cta">Schedule an External Visit</p>
                         `
                     },
@@ -922,9 +919,16 @@
                     'visiteur-extern': {
                         contentHtml: `
                             <h2>Externer Besucher</h2>
-                            <p>Unsere Protokolle für externe Besucher gewährleisten Sicherheit und Einhaltung der internen Verfahren von WKW Automotive.</p>
-                            <p>Jeder Besuch wird sorgfältig geplant, um eine reibungslose und respektvolle Integration im Einklang mit IATF 16949-Standards zu gewährleisten.</p>
-                            <p>Wir schulen unsere Teams, Besucher professionell zu begleiten.</p>
+                            <div class="image-gallery">
+                                <img src="https://blog-signals.fr/wp-content/uploads/2017/11/accueil-des-visiteurs.jpg" alt="Begrüßung von Besuchern" loading="lazy">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVa8f4kuDMhBiCGoC4n7FCHA1LtIEH-6uDEw&s" alt="System zur Begrüßung externer Besucher" loading="lazy">
+                            </div>
+                            <p>Präsentation des Systems zur Digitalisierung externer Besuche mit QR-Code</p>
+                            <p>Das System zur Digitalisierung externer Besuche basiert auf einer modernen und automatisierten Lösung mit QR-Code. Wenn ein externer Besucher eintrifft, scannt er den QR-Code, der am Eingang bereitgestellt wird. Dieser Scan leitet ihn zu einem digitalen Formular weiter, das er mit seinen persönlichen Daten, dem Grund für seinen Besuch und der zu treffenden Person ausfüllen muss. Sobald das Formular eingereicht ist, wird die Anfrage automatisch an die Personalabteilung (HR) zur Validierung weitergeleitet.</p>
+                            <p>✅ Wenn HR genehmigt, wird die Anfrage dann an die Direktion zur endgültigen Bestätigung gesendet.</p>
+                            <p>✅ Wenn die Direktion validiert, wird die Besuchsautorisierung in Echtzeit auf dem TV-Bildschirm am Sicherheits-post angezeigt, sodass die Agenten den Zugang effektiv filtern können.</p>
+                            <p>❌ Im Falle einer Ablehnung (durch HR oder Direktion) wird die Ablehnungsbenachrichtigung ebenfalls gesendet und auf demselben Bildschirm angezeigt, um die Sicherheit sofort zu informieren.</p>
+                            <p>Dieses System spart Zeit, reduziert Papierkram, verbessert die Nachverfolgbarkeit der Besucher und stärkt die Sicherheit durch einen klaren und digitalisierten Validierungsprozess.</p>
                             <p class="cta">Einen externen Besuch planen</p>
                         `
                     },
@@ -1066,9 +1070,16 @@
                     'visiteur-extern': {
                         contentHtml: `
                             <h2>زائر خارجي</h2>
-                            <p>بروتوكولاتنا للزوار الخارجيين تضمن السلامة والامتثال للإجراءات الداخلية لـ WKW Automotive.</p>
-                            <p>يتم تخطيط كل زيارة بعناية لضمان تكامل سلس واحترامي وفقًا لمعايير IATF 16949.</p>
-                            <p>ندرب فرقنا على مرافقة الزوار باحترافية.</p>
+                            <div class="image-gallery">
+                                <img src="https://blog-signals.fr/wp-content/uploads/2017/11/accueil-des-visiteurs.jpg" alt="ترحيب الزوار" loading="lazy">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVa8f4kuDMhBiCGoC4n7FCHA1LtIEH-6uDEw&s" alt="نظام ترحيب الزوار الخارجيين" loading="lazy">
+                            </div>
+                            <p>عرض نظام رقمنة الزيارات الخارجية باستخدام رمز QR</p>
+                            <p>يعتمد نظام رقمنة الزيارات الخارجية على حل حديث وآلي يعتمد على استخدام رمز QR. عندما يصل زائر خارجي، يقوم بمسح رمز QR المتاح عند المدخل. يوجه هذا المسح إلى نموذج رقمي يجب ملؤه بمعلوماته الشخصية، سبب الزيارة، والشخص الذي يلتقي به. بمجرد تقديم النموذج, تُرسل الطلب تلقائيًا إلى قسم الموارد البشرية (HR) للتحقق.</p>
+                            <p>✅ إذا وافق HR, يُرسل الطلب بعد ذلك إلى الإدارة للتأكيد النهائي.</p>
+                            <p>✅ إذا وافقت الإدارة, يُعرض تصريح الزيارة في الوقت الفعلي على شاشة التلفزيون في مركز الأمان, مما يسمح للوكلاء بتصفية الوصول بكفاءة.</p>
+                            <p>❌ في حال الرفض (من قبل HR أو الإدارة), يُرسل إشعار الرفض أيضًا ويُعرض على الشاشة نفسها, مما يبلغ الأمان فورًا.</p>
+                            <p>يسمح هذا النظام بتوفير الوقت, تقليل الأوراق, تحسين تتبع الزوار, وتعزيز الأمان من خلال عملية تحقق واضحة ورقمية.</p>
                             <p class="cta">جدولة زيارة خارجية</p>
                         `
                     },
