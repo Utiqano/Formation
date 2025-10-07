@@ -480,9 +480,72 @@
                 line-height: 1.6;
             }
         }
+      .resource-navbar {
+    background-color: #1e1e1e; /* Dark background */
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.action-buttons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.action-button {
+    background-color: #333333; /* Darker button background */
+    color: #ffffff; /* White text */
+    border: 1px solid #ff0000; /* Red border for accent */
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+.action-button:hover {
+    background-color: #ff0000; /* Red hover effect */
+    color: #ffffff; /* Keep white text on hover */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Glowing red shadow effect */
+}
+
+.action-button:active {
+    transform: translateY(1px);
+    background-color: #cc0000; /* Darker red on click */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-button {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+     
     </style>
 </head>
 <body>
+    <div class="container button-section">
+        <h2>Resources</h2>
+        <nav class="resource-navbar">
+            <ul class="action-buttons">
+                <li><button class="action-button" onclick="watchVideoProposition()">Watch Video: Proposition d'Amélioration</button></li>
+                <li><button class="action-button" onclick="watchVideo5S()">Watch Video: 5S</button></li>
+               
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="logo" id="logo">
             <span class="wkw">WKW</span>
@@ -613,7 +676,7 @@
                             <div class="benefit">
                                 <p><strong>Avantages :</strong> Ce processus d'audit numérique améliore l'efficacité, garantit une collecte de données précise et soutient la prise de décision en temps réel pour les améliorations du lieu de travail.</p>
                             </div>
-                           <a href="https://forms.office.com/e/bdFcevFJuA"cta-button">
+                           <a href="https://forms.office.com/e/bdFcevFJuA" class="cta-button">
   <p class="cta">Implémenter les 5S dans votre équipe</p>
 </a>
                         `
@@ -631,7 +694,7 @@
                             <p>✅ Si la Direction valide, l’autorisation de visite s’affiche en temps réel sur l’écran TV du poste de sécurité, permettant ainsi aux agents de filtrer l’accès efficacement.</p>
                             <p>❌ En cas de refus (par les RH ou la Direction), la notification de refus est également envoyée et affichée sur le même écran, informant immédiatement la sécurité.</p>
                             <p>Ce système permet de gagner du temps, réduire la paperasse, améliorer la traçabilité des visiteurs et renforcer la sécurité grâce à un processus de validation clair et digitalisé.</p>
-                            <a href="https://visiteur-externe-f9273.web.app/"cta-button">
+                            <a href="https://visiteur-externe-f9273.web.app/" class="cta-button">
   <p class="cta">Planifier une visite externe</p>
 </a>
                         `
@@ -648,6 +711,7 @@
                             <div class="benefit">
                                 <p><strong>Avantages :</strong> Efficacité accrue, autonomisation des employés et améliorations durables des processus.</p>
                             </div>
+                            
                             <h3>Processus d'audit Kaizen chez WKW Automotive Tunisie</h3>
                             <p>Chez WKW Automotive Tunisie, le processus d'audit Kaizen permet à tous les collaborateurs (opérateurs, directeurs, agents de sécurité, RH, etc.) de proposer facilement des idées d’amélioration pour renforcer la sécurité, la productivité, la qualité et l’environnement de travail.</p>
                             <h4>Étape 1 : Soumission de l’idée</h4>
@@ -673,7 +737,7 @@
                             <div class="benefit">
                                 <p><strong>Avantages :</strong> Ce processus responsabilise les employés, stimule l’innovation et aligne les améliorations sur les objectifs de l’organisation.</p>
                             </div>
-                            <a href="https://forms.office.com/e/TpWLh24LzL"cta-button">
+                            <a href="https://forms.office.com/e/TpWLh24LzL" class="cta-button">
   <p class="cta">Soumettre une proposition</p>
 </a>
                         `
@@ -724,7 +788,9 @@
                             <div class="benefit">
                                 <p><strong>Benefits:</strong> This structured Gemba audit process ensures comprehensive workplace evaluation, promotes accountability, and supports data-driven improvements.</p>
                             </div>
+                            <a href="https://forms.office.com/e/1nWmJsVRNb" class="cta-button">
                             <p class="cta">Join a Gemba OJT Session</p>
+                            </a>
                         `
                     },
                     'lean-5s': {
@@ -770,7 +836,9 @@
                             <div class="benefit">
                                 <p><strong>Benefits:</strong> This digital audit process improves efficiency, ensures accurate data collection, and supports real-time decision-making for workplace improvements.</p>
                             </div>
+                            <a href="https://forms.office.com/e/bdFcevFJuA" class="cta-button">
                             <p class="cta">Implement 5S in Your Team</p>
+                            </a>
                         `
                     },
                     'visiteur-extern': {
@@ -786,7 +854,9 @@
                             <p>✅ If Management validates, the visit authorization is displayed in real-time on the TV screen at the security post, allowing agents to effectively filter access.</p>
                             <p>❌ In case of refusal (by HR or Management), the refusal notification is also sent and displayed on the same screen, immediately informing security.</p>
                             <p>This system saves time, reduces paperwork, improves visitor traceability, and strengthens security through a clear and digitized validation process.</p>
+                            <a href="https://visiteur-externe-f9273.web.app/" class="cta-button">
                             <p class="cta">Schedule an External Visit</p>
+                            </a>
                         `
                     },
                     'proposition-amelioration': {
@@ -826,7 +896,9 @@
                             <div class="benefit">
                                 <p><strong>Benefits:</strong> This process empowers employees, stimulates innovation, and aligns improvements with organizational goals.</p>
                             </div>
+                            <a href="https://forms.office.com/e/TpWLh24LzL" class="cta-button">
                             <p class="cta">Submit a Proposal</p>
+                            </a>
                         `
                     }
                 },
@@ -875,7 +947,9 @@
                             <div class="benefit">
                                 <p><strong>Vorteile:</strong> Dieser strukturierte Gemba-Audit-Prozess gewährleistet eine umfassende Bewertung des Arbeitsplatzes, fördert Verantwortung und unterstützt datenbasierte Verbesserungen.</p>
                             </div>
+                            <a href="https://forms.office.com/e/1nWmJsVRNb" class="cta-button">
                             <p class="cta">An einer Gemba OJT-Session teilnehmen</p>
+                            </a>
                         `
                     },
                     'lean-5s': {
@@ -921,7 +995,9 @@
                             <div class="benefit">
                                 <p><strong>Vorteile:</strong> Dieser digitale Audit-Prozess verbessert die Effizienz, gewährleistet genaue Datenerfassung und unterstützt Echtzeit-Entscheidungsfindung für Arbeitsplatzverbesserungen.</p>
                             </div>
+                            <a href="https://forms.office.com/e/bdFcevFJuA" class="cta-button">
                             <p class="cta">5S in Ihrem Team umsetzen</p>
+                            </a>
                         `
                     },
                     'visiteur-extern': {
@@ -937,7 +1013,9 @@
                             <p>✅ Wenn die Direktion validiert, wird die Besuchsautorisierung in Echtzeit auf dem TV-Bildschirm am Sicherheits-post angezeigt, sodass die Agenten den Zugang effektiv filtern können.</p>
                             <p>❌ Im Falle einer Ablehnung (durch HR oder Direktion) wird die Ablehnungsbenachrichtigung ebenfalls gesendet und auf demselben Bildschirm angezeigt, um die Sicherheit sofort zu informieren.</p>
                             <p>Dieses System spart Zeit, reduziert Papierkram, verbessert die Nachverfolgbarkeit der Besucher und stärkt die Sicherheit durch einen klaren und digitalisierten Validierungsprozess.</p>
+                            <a href="https://visiteur-externe-f9273.web.app/" class="cta-button">
                             <p class="cta">Einen externen Besuch planen</p>
+                            </a>
                         `
                     },
                     'proposition-amelioration': {
@@ -977,7 +1055,9 @@
                             <div class="benefit">
                                 <p><strong>Vorteile:</strong> Dieser Prozess ermächtigt Mitarbeiter, stimuliert Innovation und richtet Verbesserungen an den Zielen der Organisation aus.</p>
                             </div>
+                            <a href="https://forms.office.com/e/TpWLh24LzL" class="cta-button">
                             <p class="cta">Einen Vorschlag einreichen</p>
+                            </a>
                         `
                     }
                 },
@@ -1026,7 +1106,9 @@
                             <div class="benefit">
                                 <p><strong>الفوائد:</strong> تضمن هذه العملية المنظمة لتدقيق Gemba تقييمًا شاملاً لمكان العمل، تعزز المساءلة، وتدعم التحسينات المبنية على البيانات.</p>
                             </div>
+                            <a href="https://forms.office.com/e/1nWmJsVRNb" class="cta-button">
                             <p class="cta">الانضمام إلى جلسة Gemba OJT</p>
+                            </a>
                         `
                     },
                     'lean-5s': {
@@ -1072,7 +1154,9 @@
                             <div class="benefit">
                                 <p><strong>الفوائد:</strong> تحسن هذه العملية الرقمية للتدقيق الكفاءة, تضمن جمع بيانات دقيقة, وتدعم اتخاذ القرارات في الوقت الفعلي لتحسينات مكان العمل.</p>
                             </div>
+                            <a href="https://forms.office.com/e/bdFcevFJuA" class="cta-button">
                             <p class="cta">تنفيذ الـ5S في فريقك</p>
+                            </a>
                         `
                     },
                     'visiteur-extern': {
@@ -1088,7 +1172,9 @@
                             <p>✅ إذا وافقت الإدارة, يُعرض تصريح الزيارة في الوقت الفعلي على شاشة التلفزيون في مركز الأمان, مما يسمح للوكلاء بتصفية الوصول بكفاءة.</p>
                             <p>❌ في حال الرفض (من قبل HR أو الإدارة), يُرسل إشعار الرفض أيضًا ويُعرض على الشاشة نفسها, مما يبلغ الأمان فورًا.</p>
                             <p>يسمح هذا النظام بتوفير الوقت, تقليل الأوراق, تحسين تتبع الزوار, وتعزيز الأمان من خلال عملية تحقق واضحة ورقمية.</p>
+                            <a href="https://visiteur-externe-f9273.web.app/" class="cta-button">
                             <p class="cta">جدولة زيارة خارجية</p>
+                            </a>
                         `
                     },
                     'proposition-amelioration': {
@@ -1128,7 +1214,9 @@
                             <div class="benefit">
                                 <p><strong>الفوائد:</strong> تعمل هذه العملية على تمكين الموظفين, تحفيز الابتكار, وتوافق التحسينات مع أهداف المنظمة.</p>
                             </div>
+                            <a href="https://forms.office.com/e/TpWLh24LzL" class="cta-button">
                             <p class="cta">تقديم اقتراح</p>
+                            </a>
                         `
                     }
                 },
@@ -1197,6 +1285,16 @@
                 });
             });
         });
+
+        // Functions for resource buttons
+        function watchVideoProposition() {
+            window.open('https://www.youtube.com/watch?v=PlZpe_P7OU8');
+        }
+
+        function watchVideo5S() {
+            window.open('https://www.youtube.com/watch?v=ntKqMhbqTII');
+        }
+
     </script>
 </body>
 </html>
