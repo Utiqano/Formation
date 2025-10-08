@@ -17,7 +17,7 @@
             overflow-x: hidden; /* Allow vertical scroll for focus */
             position: relative;
             direction: ltr;
-            transition: direction 0.5s ease;
+            transition: direction 0.5s ease, background 1s ease; /* Added smooth background transition */
         }
 
         body.rtl {
@@ -38,6 +38,12 @@
             align-items: center;
             padding: 0 20px;
             box-shadow: 0 2px 20px rgba(220, 20, 60, 0.3); /* Red glow shadow */
+            transition: height 0.3s ease, background 0.5s ease; /* Smooth header transitions */
+        }
+
+        .header:hover {
+            height: 85px; /* Slight grow on hover for interaction */
+            background: rgba(0, 0, 0, 0.95);
         }
 
         .logo {
@@ -48,6 +54,11 @@
             animation: logoEntrance 2s ease-out forwards; /* Shorter initial animation */
             opacity: 0;
             transform: scale(0);
+            transition: transform 0.3s ease; /* Added transition for hover */
+        }
+
+        .logo:hover {
+            transform: scale(1.05) rotate(5deg); /* Fun hover effect */
         }
 
         .logo.fixed {
@@ -89,8 +100,8 @@
         }
 
         @keyframes wkwGlow {
-            0% { text-shadow: 0 0 10px #DC143C; }
-            100% { text-shadow: 0 0 30px #DC143C, 0 0 40px #DC143C; }
+            0% { text-shadow: 0 0 10px #DC143C, 0 0 20px #DC143C; } /* Enhanced glow */
+            100% { text-shadow: 0 0 30px #DC143C, 0 0 40px #DC143C, 0 0 50px #DC143C; }
         }
 
         @keyframes autoSlide {
@@ -103,6 +114,12 @@
             border: 1px solid #DC143C;
             border-radius: 5px;
             padding: 5px;
+            transition: background 0.3s ease, transform 0.3s ease; /* Added transitions */
+        }
+
+        .language-selector:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1); /* Scale on hover */
         }
 
         body.rtl .language-selector {
@@ -131,6 +148,7 @@
             padding: 100px 20px 150px; /* Space for fixed header/footer */
             max-width: 1400px;
             margin: 0 auto;
+            position: relative; /* For parallax effect */
         }
 
         .subtitle {
@@ -140,6 +158,11 @@
             height: fit-content;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Depth for creativity */
             backdrop-filter: blur(5px);
+            transition: box-shadow 0.3s ease; /* Smooth shadow change */
+        }
+
+        .subtitle:hover {
+            box-shadow: 0 10px 40px rgba(220, 20, 60, 0.5); /* Red glow on hover */
         }
 
         body.rtl .subtitle {
@@ -174,6 +197,12 @@
             margin-right: 10px; /* Icon for creativity */
             color: #DC143C;
             font-size: 1.1em;
+            transition: color 0.3s ease, transform 0.3s ease; /* Icon transitions */
+        }
+
+        .subtitle-item:hover i {
+            color: #FFFFFF;
+            transform: rotate(360deg); /* Spin icon on hover */
         }
 
         body.rtl .subtitle-item i {
@@ -184,6 +213,7 @@
         .subtitle-item:hover {
             background: linear-gradient(90deg, rgba(220, 20, 60, 0.2), transparent);
             transform: translateX(5px) scale(1.02); /* Creative hover */
+            box-shadow: 0 0 15px rgba(220, 20, 60, 0.6); /* Enhanced shadow */
         }
 
         .subtitle-item.active {
@@ -206,11 +236,17 @@
             font-size: 1.2em; /* Larger text for easy reading */
             line-height: 1.8;
             color: #FFFFFF;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Added transform transition */
+            position: relative;
+            z-index: 1;
         }
 
         .background-content.loading {
             opacity: 0.5;
+        }
+
+        .background-content:hover {
+            transform: translateY(-5px); /* Lift on hover */
         }
 
         .background-content h2 {
@@ -233,6 +269,11 @@
             font-weight: 300;
             padding: 0 10px;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for focus */
+            transition: color 0.3s ease; /* Text color transition */
+        }
+
+        .background-content p:hover {
+            color: #FFFFFF; /* Brighten on hover */
         }
 
         .background-content .cta {
@@ -247,6 +288,25 @@
             transition: all 0.3s ease;
             background: transparent;
             cursor: pointer;
+            position: relative;
+            overflow: hidden; /* For ripple effect */
+        }
+
+        .background-content .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.6s ease;
+            border-radius: 50%;
+        }
+
+        .background-content .cta:hover::before {
+            transform: translate(-50%, -50%) scale(1); /* Ripple effect on hover */
         }
 
         .background-content .cta:hover {
@@ -269,6 +329,12 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Image hover effects */
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05) rotate(2deg); /* Zoom and tilt on hover */
+            box-shadow: 0 8px 16px rgba(220, 20, 60, 0.5); /* Red glow */
         }
 
         .benefit {
@@ -278,6 +344,11 @@
             margin: 20px 0;
             border-left: 4px solid #DC143C;
             text-align: left;
+            transition: background 0.3s ease;
+        }
+
+        .benefit:hover {
+            background: rgba(220, 20, 60, 0.2); /* Deepen color on hover */
         }
 
         body.rtl .benefit {
@@ -292,6 +363,12 @@
             margin-top: 40px;
             margin-bottom: 20px;
             text-align: center;
+            animation: fadeInUp 1s ease; /* New fade-in animation */
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .background-content h4 {
@@ -299,6 +376,7 @@
             font-size: 1.4em;
             margin-top: 20px;
             margin-bottom: 10px;
+            animation: fadeInUp 1.2s ease; /* Delayed fade-in */
         }
 
         .background-content ul {
@@ -317,6 +395,12 @@
             padding: 10px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .background-content ul li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px); /* Slide on hover */
         }
 
         footer {
@@ -331,6 +415,11 @@
             z-index: 10;
             border-top: 1px solid #333;
             line-height: 1.5;
+            transition: background 0.5s ease;
+        }
+
+        footer:hover {
+            background: rgba(0, 0, 0, 1); /* Full opaque on hover */
         }
 
         footer .dept-info {
@@ -345,7 +434,7 @@
             font-weight: 700;
         }
 
-        /* Creative automotive flair: subtle lines */
+        /* Creative automotive flair: subtle lines with enhanced animation */
         .main-content::before {
             content: '';
             position: absolute;
@@ -358,8 +447,29 @@
         }
 
         @keyframes shine {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { transform: translateX(0); opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
+        /* Parallax background effect */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://example.com/subtle-automotive-pattern.jpg') repeat; /* Replace with actual subtle pattern URL */
+            opacity: 0.1;
+            z-index: -1;
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+
+        /* Simulate parallax on scroll */
+        body.scrolled::after {
+            transform: translateY(50px); /* Adjust based on scroll */
         }
 
         /* Responsive Design */
@@ -398,6 +508,11 @@
                 cursor: pointer;
                 font-size: 1.5em;
                 color: #DC143C;
+                transition: transform 0.3s ease;
+            }
+
+            .menu-toggle:hover {
+                transform: rotate(90deg); /* Rotate toggle on hover */
             }
 
             body.rtl .menu-toggle {
@@ -536,6 +651,11 @@
             border-radius: 8px;
             padding: 1rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            transition: box-shadow 0.3s ease;
+        }
+
+        .resource-navbar:hover {
+            box-shadow: 0 4px 8px rgba(220, 20, 60, 0.5); /* Red glow on hover */
         }
 
         .action-buttons {
@@ -556,7 +676,7 @@
             border-radius: 5px;
             font-size: 0.95rem;
             cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
             white-space: nowrap;
         }
 
@@ -564,10 +684,11 @@
             background-color: #ff0000; /* Red hover effect */
             color: #ffffff; /* Keep white text on hover */
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Glowing red shadow effect */
+            transform: scale(1.05); /* Scale up */
         }
 
         .action-button:active {
-            transform: translateY(1px);
+            transform: translateY(1px) scale(0.95); /* Press down effect */
             background-color: #cc0000; /* Darker red on click */
         }
 
@@ -626,6 +747,11 @@
         setTimeout(() => {
             document.getElementById('logo').classList.add('fixed');
         }, 2000);
+
+        // Simulate parallax on scroll
+        window.addEventListener('scroll', () => {
+            document.body.classList.toggle('scrolled', window.scrollY > 100);
+        });
 
         // Language data with topic-specific content
         const translations = {
