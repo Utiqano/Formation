@@ -329,12 +329,13 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Image hover effects */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Image hover effects */
         }
 
         .image-gallery img:hover {
             transform: scale(1.05) rotate(2deg); /* Zoom and tilt on hover */
             box-shadow: 0 8px 16px rgba(220, 20, 60, 0.5); /* Red glow */
+            filter: brightness(1.2) contrast(1.1); /* Enhance colors */
         }
 
         .benefit {
@@ -344,11 +345,12 @@
             margin: 20px 0;
             border-left: 4px solid #DC143C;
             text-align: left;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .benefit:hover {
             background: rgba(220, 20, 60, 0.2); /* Deepen color on hover */
+            transform: translateY(-3px);
         }
 
         body.rtl .benefit {
@@ -460,7 +462,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://example.com/subtle-automotive-pattern.jpg') repeat; /* Replace with actual subtle pattern URL */
+            background: url('https://static.vecteezy.com/system/resources/previews/017/678/904/non_2x/automotive-background-with-black-and-red-combination-free-vector.jpg') repeat; /* Subtle automotive pattern */
             opacity: 0.1;
             z-index: -1;
             transform: translateY(0);
@@ -470,6 +472,24 @@
         /* Simulate parallax on scroll */
         body.scrolled::after {
             transform: translateY(50px); /* Adjust based on scroll */
+        }
+
+        /* Additional effects */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        .logo:hover {
+            animation: glitch 0.3s infinite;
+        }
+
+        .subtitle-item:hover {
+            animation: pulse 1s infinite;
         }
 
         /* Responsive Design */
@@ -704,6 +724,55 @@
                 max-width: 250px;
             }
         }
+
+        /* Welcome logo styles with typing animation */
+        .welcome-logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #DC143C;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid #DC143C;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #DC143C; }
+        }
+
+        /* Back button styles */
+        .back-button {
+            color: #FFFFFF;
+            background: #DC143C;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-button:hover {
+            background: #FF0000;
+            transform: scale(1.05);
+        }
+
+        body.rtl .back-button {
+            margin-left: auto;
+            margin-right: auto;
+        }
      
     </style>
 </head>
@@ -734,6 +803,7 @@
         <section class="background-content" id="content">
             <h2>Bienvenue</h2>
             <p>Cliquez sur un élément de la barre latérale pour en savoir plus.</p>
+            <div class="welcome-logo">WKW Automotive Tunisie</div>
         </section>
         <aside class="right-spacer"></aside> <!-- For balance -->
     </main>
@@ -757,6 +827,10 @@
         const translations = {
             fr: {
                 subtitle: ['Gemba OJT', 'Lean 5S', 'Visiteur Extern', 'Proposition d\'Amélioration', 'Ressources'],
+                welcomeTitle: 'Bienvenue',
+                welcomeText: 'Cliquez sur un élément de la barre latérale pour en savoir plus.',
+                welcomeLogo: 'WKW Automotive Tunisie',
+                backButton: 'Retour',
                 topics: {
                     'gemba-ojt': {
                         contentHtml: `
@@ -928,6 +1002,10 @@
             },
             en: {
                 subtitle: ['Gemba OJT', 'Lean 5S', 'External Visitor', 'Improvement Proposal', 'Resources'],
+                welcomeTitle: 'Welcome',
+                welcomeText: 'Click on a sidebar item to learn more.',
+                welcomeLogo: 'WKW Automotive Tunisia',
+                backButton: 'Back',
                 topics: {
                     'gemba-ojt': {
                         contentHtml: `
@@ -1098,6 +1176,10 @@
             },
             de: {
                 subtitle: ['Gemba OJT', 'Lean 5S', 'Externer Besucher', 'Verbesserungsvorschlag', 'Ressourcen'],
+                welcomeTitle: 'Willkommen',
+                welcomeText: 'Klicken Sie auf ein Sidebar-Element, um mehr zu erfahren.',
+                welcomeLogo: 'WKW Automotive Tunesien',
+                backButton: 'Zurück',
                 topics: {
                     'gemba-ojt': {
                         contentHtml: `
@@ -1268,6 +1350,10 @@
             },
             ar: {
                 subtitle: ['Gemba OJT', 'Lean 5S', 'زائر خارجي', 'اقتراح تحسين', 'الموارد'],
+                welcomeTitle: 'مرحبا',
+                welcomeText: 'انقر على عنصر في الشريط الجانبي لمعرفة المزيد.',
+                welcomeLogo: 'WKW Automotive تونس',
+                backButton: 'عودة',
                 topics: {
                     'gemba-ojt': {
                         contentHtml: `
@@ -1449,8 +1535,29 @@
 
             setTimeout(() => {
                 content.innerHTML = data.contentHtml;
+                // Add back button
+                const backBtn = document.createElement('button');
+                backBtn.className = 'back-button';
+                backBtn.textContent = translations[lang].backButton;
+                backBtn.onclick = goBack;
+                content.appendChild(backBtn);
                 content.classList.remove('loading');
             }, 300);
+        }
+
+        function loadWelcome(lang) {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <h2>${translations[lang].welcomeTitle}</h2>
+                <p>${translations[lang].welcomeText}</p>
+                <div class="welcome-logo">${translations[lang].welcomeLogo}</div>
+            `;
+        }
+
+        function goBack() {
+            const subtitleItems = document.querySelectorAll('.subtitle-item');
+            subtitleItems.forEach(i => i.classList.remove('active'));
+            loadWelcome(currentLang);
         }
 
         function switchLanguage(lang) {
@@ -1476,10 +1583,12 @@
                 document.body.classList.remove('rtl');
             }
 
-            // Reload current topic if any
+            // Reload current topic or welcome
             const activeItem = document.querySelector('.subtitle-item.active');
             if (activeItem) {
                 loadTopic(activeItem.dataset.topic, lang);
+            } else {
+                loadWelcome(lang);
             }
         }
 
@@ -1490,6 +1599,7 @@
 
         // Add click events to subtitle items
         document.addEventListener('DOMContentLoaded', () => {
+            loadWelcome('fr');
             const subtitleItems = document.querySelectorAll('.subtitle-item');
             subtitleItems.forEach((item, index) => {
                 item.addEventListener('click', () => {
